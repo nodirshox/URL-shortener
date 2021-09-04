@@ -1,0 +1,13 @@
+<%- include('includes/header') %>
+
+<div class="box content">
+    <div class="cards">
+        <form action='/generate' method="POST">
+            <label>Paste a link</label><br />
+            <input type="text" name="link" autocomplete="off" placeholder="http://..." onclick="checkURL()" required />
+            <input type="submit" value="Generate">
+        </form>
+    </div>
+</div>
+
+<%- include('includes/footer') %>
