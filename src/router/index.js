@@ -41,8 +41,8 @@ router.post("/generate", async (req, res) => {
             short_link: await utils.generateShortURL()
         }
         let result = await Link.create(newLink);
-
-        return res.render("done", { result });
+        const homeURL = process.env.homeURL || "http://localhost:3000";
+        return res.render("done", { result, homeURL });
     } catch (error) {
         return res.render("internal", { message: error.message });
     }
