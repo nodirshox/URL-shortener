@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const router = require("./router/index");
 
 // Database connection
-const mongoDBUrl = "mongodb://localhost:27017/short";
+const mongoDBUrl = process.env.CONNECTIONDB;
 
 mongoose.connect(mongoDBUrl, 
     {
